@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoQuest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ChronoQuest</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+            <button class="cta-button">Explore Now</button>
+        </nav>
+    </header>
 
+    <section id="hero">
+        <div class="hero-content">
+            <h1>ChronoQuest: Time Travel Meets Education</h1>
+            <p>Immerse yourself in history and the future with AI-driven experiences.</p>
+            <div class="cta-buttons">
+                <a href="#features" class="btn-primary">Explore Now</a>
+                <a href="#about" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-background">
+            <!-- Animated timeline placeholder -->
+            <canvas id="timelineCanvas"></canvas>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Our Mission</h2>
+        <p>At ChronoQuest, our goal is to blend education with immersive technology. Explore the past and future, engage with AI-driven historical interactions, and discover the power of blockchain in learning. Together, we create a bridge across time for everyone.</p>
+        <div class="about-visuals">
+            <img src="images/mission.jpg" alt="ChronoQuest Mission">
+        </div>
+    </section>
+
+    <section id="features">
+        <h2>Features Highlights</h2>
+        <div class="feature-cards">
+            <div class="card">
+                <i class="fas fa-history"></i>
+                <h3>Interactive Time Travel</h3>
+                <p>Explore key moments in history and the future.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-robot"></i>
+                <h3>AI-Powered Interactions</h3>
+                <p>Converse with historical figures powered by advanced AI.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-coins"></i>
+                <h3>Blockchain Integration</h3>
+                <p>Leverage $CQ tokens for unique features and benefits.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Educational Value</h3>
+                <p>Learn with immersive challenges and quizzes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tokenomics">
+        <h2>ChronoQuest ($CQ) Tokenomics</h2>
+        <p>Explore the utility, supply, and distribution of the $CQ token that powers our platform.</p>
+        <div class="tokenomics-chart">
+            <img src="images/tokenomics-chart.png" alt="Tokenomics Chart">
+        </div>
+    </section>
+
+    <section id="roadmap">
+        <h2>The ChronoQuest Journey</h2>
+        <div class="roadmap-timeline">
+            <div class="milestone">
+                <h3>Phase 1</h3>
+                <p>Initial Concept and Development</p>
+                <div class="milestone-visual">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+            </div>
+            <div class="milestone">
+                <h3>Phase 2</h3>
+                <p>Beta Testing and Community Building</p>
+                <div class="milestone-visual">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+            <div class="milestone">
+                <h3>Phase 3</h3>
+                <p>Full Launch and Expansion</p>
+                <div class="milestone-visual">
+                    <i class="fas fa-rocket"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ChronoQuest. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const timelineCanvas = document.getElementById("timelineCanvas");
+            if (timelineCanvas) {
+                const ctx = timelineCanvas.getContext("2d");
+                timelineCanvas.width = window.innerWidth;
+                timelineCanvas.height = 300;
+
+                let x = 0;
+                function drawTimeline() {
+                    ctx.clearRect(0, 0, timelineCanvas.width, timelineCanvas.height);
+                    ctx.fillStyle = "rgba(255, 191, 0, 0.8)";
+                    for (let i = x; i < timelineCanvas.width; i += 150) {
+                        ctx.beginPath();
+                        ctx.arc(i, timelineCanvas.height / 2, 10, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                function animateTimeline() {
+                    x -= 2;
+                    if (x < -150) x = 0;
+                    drawTimeline();
+                    requestAnimationFrame(animateTimeline);
+                }
+
+                animateTimeline();
+            }
+        });
+    </script>
+</body>
+</html>
