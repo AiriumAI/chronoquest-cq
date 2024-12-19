@@ -7,5 +7,5 @@ from .utils import *
 from .config import *
 
 # Package metadata
-__author__ = "Your Name or Organization"
+__author__ = "ChronoQuest"
 __license__ = "Apache License 2.0"
